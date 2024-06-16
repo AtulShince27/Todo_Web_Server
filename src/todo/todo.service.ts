@@ -13,7 +13,13 @@ export class TodoService {
   }
 
   async getTodos(): Promise<Todo[]> {
-    return this.prisma.todo.findMany();
+    return this.prisma.todo.findMany({
+      orderBy: [
+        {
+          createdAt: 'asc', // or 'desc' for descending order
+        },
+      ],
+    });
   }
 
   async getTodoById(id: number): Promise<Todo> {
