@@ -14,7 +14,7 @@ const bootstrapLocal = async () => {
   const port = configService.get('PORT');
 
   app.enableCors({
-    origin: true,
+    origin: ['https://todo-web-app-zeta.vercel.app', 'http://localhost:3000'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
